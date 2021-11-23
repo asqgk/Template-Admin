@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import useAuth from '../../data/hook/useAuth'
 
@@ -10,7 +11,7 @@ export default function AvatarUsuario(props: AvatarUsuarioProps) {
 
     return (
         <Link href='/perfil' passHref>
-            <img
+            <Image
                 src={usuario?.imagemUrl ?? '/images/avatar.png'}
                 alt="Avatar do Usuário"
                 className={`
