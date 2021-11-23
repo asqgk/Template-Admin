@@ -5,9 +5,7 @@ import { IconeAtencao } from "../components/icons";
 import useAuth from "../data/hook/useAuth";
 
 export default function Autenticacao() {
-
-    const src = "https://source.unsplash.com/random"
-
+    
     const { cadastrar, login, loginGoogle } = useAuth()
 
     const [erro, setErro] = useState(null)
@@ -35,15 +33,16 @@ export default function Autenticacao() {
     return (
         <div className="flex h-screen items-center justify-center">
             <div className="hidden md:block md:w-1/2 lg:w-2/3">
-                <Image
-                    unoptimized={true}
-                    loader={() => src}
-                    src={src}
-                    alt="Random image"
-                    width="100%"
-                    height="100%"
-                    layout="responsive"
-                />
+                <div className="h-screen w-full relative">
+                    <Image
+                        unoptimized={true}
+                        src="https://source.unsplash.com/random"
+                        alt="Random image"
+                        sizes="100%" 
+                        layout="fill"
+                        objectFit="cover"
+                    />
+                </div>
             </div>
             <div className="m-10 w-full md:w-1/2">
                 <h1 className={`
